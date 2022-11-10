@@ -1,0 +1,122 @@
+@keyframes pisca {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+* {
+    font-family: 'Montserrat', 'sans-serif';
+
+    margin: 0;
+    padding: 0;
+}
+
+.container_offers {
+    max-width: 100%;
+    height: 90vh;
+}
+
+.title_cont_offer::after {
+    content: '|';
+    margin-left: 5px;
+    color: #fff;
+    opacity: 1;
+    animation: pisca 7s infinite;
+}
+
+.title_cont_offer {
+    color: #fff;
+    font-size: 50px;
+    text-align: center;
+    margin: 30px 0 0 0;
+    display: block;
+}
+
+.grid_offers {
+    margin-top: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.offer_item {
+    color: #fff;
+    border: 1px solid var(--main-color);
+    width: 430px;
+    height: 600px;
+    border-radius: 12px;
+}
+
+.annual_offer h4,
+.monthly_offer h4 {
+    margin-top: 15px;
+}
+
+.offer_item h4 {
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 500;
+    font-size: 18px;
+    text-decoration: underline;
+    text-underline-offset: 20px;
+    text-decoration-color: var(--main-color);
+}
+
+.black_offer .recommend {
+    position: relative;
+    top: -12px;
+    left: 35%;
+    font-size: 16px;
+    background-color: var(--blue-sec-color);
+    padding: 6px;
+    border-radius: 12px;
+}
+
+
+
+.value_offer {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    padding: 12px;
+}
+
+.value_offer .symbol {
+    align-self: flex-start;
+    margin-right: 12px;
+    font-size: 19px;
+}
+
+.value_offer .price {
+    font-size: 66px;
+}
+
+.value_offer .year {
+    margin-right: 19px;
+    font-size: 19px;
+    align-self: flex-end;
+}
+
+.items_include {
+    margin-left: 30px;
+    margin-top: 60px;
+}
+
+.items_include li {
+    list-style-type: none;
+    margin-bottom: 12px;
+}
+
+.icon-color {
+    color: var(--main-color);
+    margin-right: 12px;
+    font-size: 19px;
+}

@@ -1,0 +1,192 @@
+:root {
+    --main-color: #1af7fb;
+    --blue-sec-color: #243dc8;
+    --bg-color: #1c2128;
+    --monochromatic-color: #2d333b;
+}
+
+* {
+    font-family: 'Montserrat', 'sans-serif';
+    margin: 0;
+    padding: 0;
+}
+
+.container_session {
+    max-width: 100%;
+    background-color: var(--bg-color);
+}
+
+.navbar_main {
+    background-color: #1af7fb;
+    padding: 55px 65px 55px 170px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar_main .pic_brand {
+    background-image: url("../assets/logo_domain-removebg-preview.png");
+    background-repeat: no-repeat;
+    position: absolute;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+}
+
+.navbar_main .logo {
+    color: #000;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.navbar_main ul {
+    display: flex;
+}
+
+.navbar_main ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.navbar_main ul li {
+    margin-left: 50px;
+    font-size: 18px;
+    list-style-type: none;
+}
+.titulo_sessao span {
+    font-size: 23px;
+}
+/* Busca */
+
+.busca {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 30px;
+    max-width: 100%;
+}
+
+.busca input {
+    border: 0.3px solid #000;
+    border-radius: 18px;
+    outline: none;
+    width: 500px;
+    padding: 10px;
+}
+
+.busca .filtro_busca {
+    position: inherit;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    right: 220px;
+    padding: 8px;
+}
+
+.busca .filtro_busca .busca_titulo {
+    font-size: 15px;
+    color: #fff;
+}
+
+.btn_filtro {
+    outline: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 4px;
+    padding: 3px 9px 3px 9px;
+    border-radius: 12px;
+    background-color: var(--blue-sec-color);
+}
+
+.btn_filtro:hover {
+    transition: 0.3s;
+    background-color: #1a2b8c;
+}
+
+.busca .filtro_dados input::placeholder {
+    font-size: 13px;
+    font-style: italic;
+}
+
+.busca .filtro_dados span {
+    cursor: pointer;
+    position: relative;
+    right: 35px;
+    top: 8px;
+    font-weight: bold;
+    color: var(--blue-sec-color);
+}
+
+/* Footer */
+
+footer { 
+    max-width: 100%;
+    border-top: 1px solid var(--blue-sec-color);
+    bottom: 0;
+    left: 0;
+    max-height: max-content;
+    position: relative;
+    margin: 0px 100px 0 100px;
+    padding: 40px;
+    flex-direction: row;
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+.cadastro_ref {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer .cadastro_ref h5 {
+    padding: 0px 0px 50px 0;
+}
+footer .cadastro_ref a {
+    color: #fff;
+    font-size: 20px;
+}
+footer .cadastro_ref a {
+    text-decoration-color: var(--main-color);
+    text-decoration-thickness: 1.5px;
+}
+
+footer .informacoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+footer .informacoes ul {
+    list-style-type: none;
+    font-size: 19px;
+    margin-top: 25px;
+}
+
+footer .informacoes ul li {
+    padding: 17px;
+}
+
+footer .informacoes ul li a {
+    text-decoration-color: var(--main-color);
+    text-decoration-thickness: 1.5px;
+    color: #fff;
+}
+.contato {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.contato .contato_icons i{
+    color: var(--main-color);
+    padding: 50px;
+    font-size: 40px;
+}
+
+footer h5 {
+    color: var(--main-color);
+    opacity: 0.8;
+    font-size: 26px;
+}
