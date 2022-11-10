@@ -101,7 +101,7 @@
 
                         <div class="form-control">
                             <label for="peso">Peso</label>
-                            <input type="text" id="peso" placeholder="Informe seu peso em Kg" min="0">
+                            <input type="text" id="peso" name="peso" placeholder="Informe seu peso em Kg" min="0">
                             <i><img class="img-success" src="../assets/success-icon.svg" alt=""></i>
                             <i><img class="img-error" src="../assets/error-icon.svg" alt=""></i>
 
@@ -110,7 +110,7 @@
 
                         <div class="form-control">
                             <label for="data">Data de registro</label>
-                            <input type="date" id="data" placeholder="Data de registro">
+                            <input type="date" name="data" id="data" placeholder="Data de registro">
 
                             <small>Error message</small>
                         </div>
@@ -124,7 +124,7 @@
 
                         <div class="form-control">
                             <label for="logradouro">Logradouro</label>
-                            <input type="text" id="logradouro" placeholder="Informe o tipo do logradouro">
+                            <input type="text" name="logradouro" id="logradouro" placeholder="Informe o tipo do logradouro">
                             <i><img class="img-success" src="../assets/success-icon.svg" alt=""></i>
                             <i><img class="img-error" src="../assets/error-icon.svg" alt=""></i>
 
@@ -133,7 +133,7 @@
 
                         <div class="form-control">
                             <label for="cep">CEP</label>
-                            <input type="text" id="cep" placeholder="99999-999">
+                            <input type="text" name="cep" id="cep" placeholder="99999-999">
                             <i><img class="img-success" src="../assets/success-icon.svg" alt=""></i>
                             <i><img class="img-error" src="../assets/error-icon.svg" alt=""></i>
 
@@ -143,7 +143,7 @@
 
                         <div class="form-control">
                             <label for="rua">Rua</label>
-                            <input type="text" id="rua" placeholder="Informe o nome da rua">
+                            <input type="text" name="rua" id="rua" placeholder="Informe o nome da rua">
                             <i><img class="img-success" src="../assets/success-icon.svg" alt=""></i>
                             <i><img class="img-error" src="../assets/error-icon.svg" alt=""></i>
 
@@ -152,7 +152,7 @@
 
                         <div class="form-control">
                             <label for="numero">Número da residência</label>
-                            <input type="text" id="numero" placeholder="Informe o número da residência">
+                            <input type="text" name="numeroRua" id="numero" placeholder="Informe o número da residência">
                             <i><img class="img-success" src="../assets/success-icon.svg" alt=""></i>
                             <i><img class="img-error" src="../assets/error-icon.svg" alt=""></i>
 
@@ -162,7 +162,7 @@
 
                         <div class="form-control">
                             <label for="complemento">Complemento</label>
-                            <input type="text" id="complemento" placeholder="Informe o complemento">
+                            <input type="text" name="complemento" id="complemento" placeholder="Informe o complemento">
                             <i><img class="img-success" src="../assets/success-icon.svg" alt=""></i>
                             <i><img class="img-error" src="../assets/error-icon.svg" alt=""></i>
 
@@ -171,7 +171,7 @@
 
                         <div class="form-control">
                             <label for="bairro">Bairro</label>
-                            <input type="text" id="bairro" placeholder="Informe o bairro">
+                            <input type="text" name="bairro" id="bairro" placeholder="Informe o bairro">
                             <i><img class="img-success" src="../assets/success-icon.svg" alt=""></i>
                             <i><img class="img-error" src="../assets/error-icon.svg" alt=""></i>
 
@@ -180,7 +180,7 @@
 
                         <div class="form-control">
                             <label for="cidade">Cidade</label>
-                            <input type="text" id="cidade" placeholder="Informe a cidade">
+                            <input type="text" name="cidade" id="cidade" placeholder="Informe a cidade">
                             <i><img class="img-success" src="../assets/success-icon.svg" alt=""></i>
                             <i><img class="img-error" src="../assets/error-icon.svg" alt=""></i>
 
@@ -189,7 +189,7 @@
 
                         <div class="form-control">
                             <label for="estado">Estado</label>
-                            <input type="text" id="estado" placeholder="Informe o estado">
+                            <input type="text" name="estado" id="estado" placeholder="Informe o estado">
                             <i><img class="img-success" src="../assets/success-icon.svg" alt=""></i>
                             <i><img class="img-error" src="../assets/error-icon.svg" alt=""></i>
 

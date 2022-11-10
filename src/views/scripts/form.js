@@ -50,10 +50,10 @@ function successValidation(input) {
 }
 
 function validate() {
-    if (nameValidator && emailValidator && RGValidator()
-        && phoneValidator() && fixoValidator() && dateValidator()
-        && bairroValidator() && cidadeValidator() && estadoValidator() && complementoValidator() && numeroresValidator()
-        && lograValidator() && alturaValidator() && pesoValidator() && cepValidator() && ruaValidator()) {
+    if (nameValidator() && RGValidator() && emailValidator() && 
+        fixoValidator() && phoneValidator() && alturaValidator()
+        && pesoValidator() && dateValidator() && lograValidator() && cepValidator() && ruaValidator()
+        && numeroresValidator() && complementoValidator() && bairroValidator() && cidadeValidator() && estadoValidator()) {
 
             return true;
     } else {
