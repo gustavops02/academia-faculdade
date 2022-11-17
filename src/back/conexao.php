@@ -5,9 +5,10 @@ $username = 'root';
 $passwd = '';
 $database = 'mydb';
 
-
-$mysqli = new mysqli($host,$username,$passwd,$database);
-
-if($mysqli->error) {
-    die("Falha ao conectar com o banco: ".$mysqli->error);
+try {
+    $pdo = new PDO("mysql:host=".$host.";dbname=".$database, $username, $passwd);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}catch(PDOException $e) {
+    echo "Error: ". $e->getMessage();
 }
+
