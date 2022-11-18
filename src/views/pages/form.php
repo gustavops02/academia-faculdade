@@ -38,7 +38,7 @@
 
         <fieldset>
 
-            <form class="form" action="../../back/controller.php" id="form" method="POST">
+            <form class="form" action="../../back/cadastrar.php" id="form" method="POST">
                 <div class="dados_formulario">
 
                     <div class="dados_pessoais">
