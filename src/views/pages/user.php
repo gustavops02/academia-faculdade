@@ -1,8 +1,7 @@
 <?php
 include '../../back/conexao.php';
-if(!isset($_SESSION)){
+if (!isset($_SESSION)) {
     session_start();
-
 } else {
     die("Você não está cadastrado. ");
 }
@@ -42,6 +41,15 @@ if(!isset($_SESSION)){
             </ul>
         </nav>
 
+        <?php
+
+            include "../../back/utils.php";
+            $rg = cleanInput($_SESSION['rg']);
+            $altura = cleanAlturaEPeso($_SESSION['altura']);
+            $peso = cleanAlturaEPeso($_SESSION['peso']);
+
+        ?>
+
 
         <div class="container_user">
             <div class="user_info">
@@ -49,9 +57,9 @@ if(!isset($_SESSION)){
 
                 <div class="content_info">Nome : <span class="info"><?php echo $_SESSION['nome']; ?></span></div>
                 <div class="content_info">E-mail : <span class="info"><?php echo $_SESSION['email']; ?></span></div>
-                <div class="content_info">RG : <span class="info"><?php echo $_SESSION['rg']; ?></span></div>
-                <div class="content_info">Altura : <span class="info"><?php echo $_SESSION['altura']; ?></span></div>
-                <div class="content_info">Peso : <span class="info"><?php echo $_SESSION['peso']; ?></span></div>
+                <div class="content_info">RG : <span class="info"><?php echo $rg; ?></span></div>
+                <div class="content_info">Altura : <span class="info"><?php echo $altura; ?></span></div>
+                <div class="content_info">Peso : <span class="info"><?php echo $peso; ?></span></div>
                 <div class="content_info">Endereço : <span class="info"><?php echo $_SESSION['endereco']; ?></span></div>
 
                 <div class="buttons_crud">
