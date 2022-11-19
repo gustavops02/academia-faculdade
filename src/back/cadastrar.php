@@ -51,12 +51,21 @@ if (isset($_POST)) {
 
         $stmt->execute();
 
-        session_start();
-        $_SESSION['email'] = $email;
-        $_SESSION['nome'] = $nome;
-        $_SESSION['rg'] = $rg;
+        if($stmt->rowCount() > 0) {
+            session_start();
+            $_SESSION['email'] = $email;
+            $_SESSION['nome'] = $nome;
+            $_SESSION['rg'] = $rg;
+            $_SESSION['altura'] = $altura;
+            $_SESSION['peso'] = $peso;
+            $_SESSION['endereco'] = $rua.", ".$bairro.", ".$cidade."- ".$estado;
+            header('Location: ../views/pages/user.php');
+        } else {
+            die('Erro...');
+        }
 
-        header('Location: ../views/pages/index.php');
+
+
 
     } catch (PDOException $e) {
         echo $e->getMessage();
