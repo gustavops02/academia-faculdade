@@ -1,58 +1,3 @@
-<?php
-
-session_start();
-
-include "./utils.php";
-include "./conexao.php";
-$id = cleanInput($_GET['id']); // ID passado no parâmetro
-/*
-echo "<pre>";
-print_r($_POST);
-echo "</pre>";
-exit;
-*/
-
-$nome = $_POST['nome'];
-$email = $_POST['email'];
-$telefone = cleanInput($_POST['tel_fixo']);
-$celular = cleanInput($_POST['celular']);
-$altura = cleanAlturaEPeso($_POST['altura']);
-$peso = cleanAlturaEPeso($_POST['peso']);
-$data = $_POST['data'];
-$logradouro = $_POST['logradouro'];
-$rua = $_POST['rua'];
-$cep = $_POST['cep'];
-$numeroRua = $_POST['numeroRua'];
-$complemento = $_POST['complemento'];
-$bairro = $_POST['bairro'];
-$cidade = $_POST['cidade'];
-$estado = $_POST['estado'];
-
-if (isset($_POST)) {
-    try {
-        $query = "UPDATE Usuario SET nome= :nome, ddd_tel_fixo= :tel, ddd_tel_cel= :cel, email= :email, data_cadastro= :data_cad, logradouro= :logra, nome_logradouro= :rua, numero= :num, CEP= :cep, complemento= :compl, bairro= :bairro, cidade= :cidade, estado= :estado, altura= :altura, peso= :peso WHERE RG= :rg";
-        $stmt = $pdo->prepare($query);
-        $stmt->execute();
-
-        if ($stmt->rowCount() == 0) {
-            die("Erro, log do row count");
-            exit;
-        } else {
-            echo "Atualizado";
-            exit;
-        }
-        echo "<pre>";
-        print_r($query);
-        echo "</pre>";
-        exit;
-    } catch (PDOException $e) {
-        die("Erro: " . $e->getMessage());
-    }
-} else {
-    die("Não tem POST");
-}
-?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -257,7 +202,73 @@ if (isset($_POST)) {
     </div>
 
     <br>
+    <?php
+    include "./utils.php";
+    include "./conexao.php";
+    $id = cleanInput($_GET['id']); // ID passado no parâmetro
+    /*
+    echo "<pre>";
+    print_r($_POST);
+    echo "</pre>";
+    exit;
+    */
 
+
+    // Pega as variáveis do POST
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $telefone = cleanInput($_POST['tel_fixo']);
+    $celular = cleanInput($_POST['celular']);
+    $altura = cleanAlturaEPeso($_POST['altura']);
+    $peso = cleanAlturaEPeso($_POST['peso']);
+    $data = $_POST['data'];
+    $logradouro = $_POST['logradouro'];
+    $rua = $_POST['rua'];
+    $cep = cleanInput($_POST['cep']);
+    $numeroRua = $_POST['numeroRua'];
+    $complemento = $_POST['complemento'];
+    $bairro = $_POST['bairro'];
+    $cidade = $_POST['cidade'];
+    $estado = $_POST['estado'];
+
+
+    // Se tiver POST, faz isso:
+    if (isset($_POST)) {
+        try {
+            $query = "UPDATE Usuario SET nome= :nome, ddd_tel_fixo= :tel, ddd_tel_cel= :cel, email= :email, data_cadastro= :data_cad, logradouro= :logra, nome_logradouro= :rua, numero= :num, CEP= :cep, complemento= :compl, bairro= :bairro, cidade= :cidade, estado= :estado, altura= :altura, peso= :peso WHERE RG= :rg";
+            $stmt = $pdo->prepare($query);
+            $stmt->bindValue(":nome", $nome);
+            $stmt->bindValue(":tel", $telefone);
+            $stmt->bindValue(":cel", $celular);
+            $stmt->bindValue(":email", $email);
+            $stmt->bindValue(":data_cad", $data);
+            $stmt->bindValue(":logra", $logradouro);
+            $stmt->bindValue(":rua", $rua);
+            $stmt->bindValue(":num", $numeroRua);
+            $stmt->bindValue(":cep", $cep);
+            $stmt->bindValue(":compl", $complemento);
+            $stmt->bindValue(":bairro", $bairro);
+            $stmt->bindValue(":cidade", $cidade);
+            $stmt->bindValue(":estado", $estado);
+            $stmt->bindValue(":altura", $altura);
+            $stmt->bindValue(":peso", $peso);
+            $stmt->bindValue(":rg", $id);
+
+            $stmt->execute();
+
+            if ($stmt->rowCount() !== 0) {
+            } else {
+                die("erro");
+                exit;
+            }
+        } catch (PDOException $e) {
+            die("Erro: " . $e->getMessage());
+            exit;
+        }
+    } else {
+        die("Não tem POST");
+    }
+    ?>
 </body>
 
 </html>
