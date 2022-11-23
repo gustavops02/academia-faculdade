@@ -64,7 +64,7 @@ if (!isset($_SESSION)) {
 
                 <div class="buttons_crud">
                     <a href="../../back/update.php?id=<?php echo $_SESSION['rg'] ?>"><button class="update">Alterar</button></a>
-                    <a href="../../back/delete.php"><button class="delete">Apagar</button></a>
+                    <a href="../../back/delete.php?id=<?php echo $_SESSION['rg'] ?>"><button class="delete">Apagar</button></a>
                 </div>
             </div>
 
