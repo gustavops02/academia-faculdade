@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -45,14 +48,13 @@
             </form>
         </div>
         <div class="find_users">
-            <h1>Usuários encontrados: </h1>
+            <h1>Usuários encontrados: <?php echo $_GET['rows']; ?> </h1>
 
             <div class="user">
-                <p><span>Nome: Nome da pessoa</span></p>
-                <p><span>RG: RG da pessoa</span></p>
-                <p><span>Email: Email da pessoa</span></p>
-                <p><span>Endereço: Endereço da pessoa</span></p>
-
+                <p><span>Nome: <?php echo $_SESSION['nome'] ?></span></p>
+                <p><span>RG: <?php echo $_SESSION['rg'] ?></span></p>
+                <p><span>Email: <?php echo $_SESSION['email'] ?></span></p>
+                <p><span>Endereço: <?php echo $_SESSION['endereco'] ?></span></p>
 
             </div>
         </div>

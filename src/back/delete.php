@@ -15,7 +15,7 @@ if (!isset($_GET)) {
     $stmt->execute();
 
     if($stmt->rowCount() == 1) {
-        session_destroy();
+        session_abort();
         header("location: ../views/pages/index.php");
     } else {
         echo "Algo deu errado";exit;
