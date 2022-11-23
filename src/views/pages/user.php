@@ -53,6 +53,7 @@ if (!isset($_SESSION)) {
 
         <div class="container_user">
             <div class="user_info">
+                <h1>Cadastrado!</h1> <br><br>
                 <i class="fa-solid icon_user fa-circle-user"></i>
 
                 <div class="content_info">Nome : <span class="info"><?php echo $_SESSION['nome']; ?></span></div>
@@ -63,7 +64,7 @@ if (!isset($_SESSION)) {
                 <div class="content_info">Endereço : <span class="info"><?php echo $_SESSION['endereco']; ?></span></div>
 
                 <div class="buttons_crud">
-                    <a href="../../back/update.php?id=<?php echo $_SESSION['rg'] ?>"><button class="update">Alterar</button></a>
+                    <a href="./update.php?id=<?php echo $_SESSION['rg'] ?>"><button class="update">Alterar</button></a>
                     <a href="../../back/delete.php?id=<?php echo $_SESSION['rg'] ?>"><button class="delete">Apagar</button></a>
                 </div>
             </div>

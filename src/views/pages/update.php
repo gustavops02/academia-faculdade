@@ -1,3 +1,12 @@
+<?php
+include '../../back/conexao.php';
+if (!isset($_SESSION)) {
+    session_start();
+} else {
+    die("Você não está cadastrado. ");
+}
+
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -5,8 +14,8 @@
     <meta charset="UTF-8">
     <title>ACADEMIA | Atualização de Conta</title>
 
-    <link rel="stylesheet" type="text/css" href="../views/styles/form.css" />
-    <link rel="stylesheet" href="../views/styles/homepage.css" />
+    <link rel="stylesheet" type="text/css" href="../styles/form.css" />
+    <link rel="stylesheet" href="../styles/homepage.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
@@ -25,17 +34,17 @@
             <div class="pic_brand"></div>
             <span class="logo"></span>
             <ul>
-                <li><a href="../views/pages/index.php">Home</a></li>
+                <li><a href="./index.php">Home</a></li>
                 <li><a href="#">Espaço do Cliente</a></li>
-                <li><a href="../views/pages/form.php">Junte-se a nós</a></li>
+                <li><a href="./form.php">Junte-se a nós</a></li>
                 <li><a href="#">Agendamento</a></li>
-                <li><a href="../views/pages/planos.html">Planos</a></li>
+                <li><a href="./planos.html">Planos</a></li>
             </ul>
         </nav>
 
         <fieldset>
 
-            <form class="form" action="" id="form" method="POST">
+            <form class="form" action="../../back/update_action.php?id=<?php echo $_SESSION['rg'] ?>" id="form" method="POST">
                 <div class="dados_formulario">
 
                     <div class="dados_pessoais">
@@ -202,63 +211,7 @@
     </div>
 
     <br>
-    <?php
-    include "./utils.php";
-    include "./conexao.php";
-    $id = cleanInput($_GET['id']); 
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $telefone = cleanInput($_POST['tel_fixo']);
-    $celular = cleanInput($_POST['celular']);
-    $altura = cleanAlturaEPeso($_POST['altura']);
-    $peso = cleanAlturaEPeso($_POST['peso']);
-    $data = $_POST['data'];
-    $logradouro = $_POST['logradouro'];
-    $rua = $_POST['rua'];
-    $cep = cleanInput($_POST['cep']);
-    $numeroRua = $_POST['numeroRua'];
-    $complemento = $_POST['complemento'];
-    $bairro = $_POST['bairro'];
-    $cidade = $_POST['cidade'];
-    $estado = $_POST['estado'];
 
-    if (isset($_POST)) {
-        try {
-            $query = "UPDATE Usuario SET nome= :nome, ddd_tel_fixo= :tel, ddd_tel_cel= :cel, email= :email, data_cadastro= :data_cad, logradouro= :logra, nome_logradouro= :rua, numero= :num, CEP= :cep, complemento= :compl, bairro= :bairro, cidade= :cidade, estado= :estado, altura= :altura, peso= :peso WHERE RG= :rg";
-            $stmt = $pdo->prepare($query);
-            $stmt->bindValue(":nome", $nome);
-            $stmt->bindValue(":tel", $telefone);
-            $stmt->bindValue(":cel", $celular);
-            $stmt->bindValue(":email", $email);
-            $stmt->bindValue(":data_cad", $data);
-            $stmt->bindValue(":logra", $logradouro);
-            $stmt->bindValue(":rua", $rua);
-            $stmt->bindValue(":num", $numeroRua);
-            $stmt->bindValue(":cep", $cep);
-            $stmt->bindValue(":compl", $complemento);
-            $stmt->bindValue(":bairro", $bairro);
-            $stmt->bindValue(":cidade", $cidade);
-            $stmt->bindValue(":estado", $estado);
-            $stmt->bindValue(":altura", $altura);
-            $stmt->bindValue(":peso", $peso);
-            $stmt->bindValue(":rg", $id);
-
-            $stmt->execute();
-            if ($stmt->rowCount() !== 0) {
-                exit;
-                header('location: ../views/pages/index.php');
-            } else {
-                die("erro");
-                exit;
-            }
-        } catch (PDOException $e) {
-            die("Erro: " . $e->getMessage());
-            exit;
-        }
-    } else {
-        die("Não tem POST");
-    }
-    ?>
 </body>
 
 </html>
