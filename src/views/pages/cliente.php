@@ -41,9 +41,6 @@
                 <label>Digite o seu RG</label>
                 <input type="text" name="rg" placeholder="XX.XXX.XXX-X" />
                 <br>
-                <label>Digite o seu E-mail</label>
-                <input type="text" name="email" placeholder="example@example.com" />
-                <br>
                 <input type="submit" value="Procurar" />
             </form>
         </div>
@@ -51,10 +48,11 @@
             <h1>Usuários encontrados: <?php echo $_GET['rows']; ?> </h1>
 
             <div class="user">
-                <p><span>Nome: <?php echo $_SESSION['nome'] ?></span></p>
-                <p><span>RG: <?php echo $_SESSION['rg'] ?></span></p>
-                <p><span>Email: <?php echo $_SESSION['email'] ?></span></p>
-                <p><span>Endereço: <?php echo $_SESSION['endereco'] ?></span></p>
+                <p><span>Nome: <?php echo $_GET['nome'] ?></span></p>
+                <p><span>RG: <?php echo $_GET['rg'] ?></span></p>
+                <p><span>Email: <?php echo $_GET['email'] ?></span></p>
+                <p><span>Endereço: <?php echo $_GET['endereco'] ?></span></p>
+
 
             </div>
         </div>
