@@ -16,7 +16,7 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <script src="https://kit.fontawesome.com/a9f11940bf.js" crossorigin="anonymous"></script>
 
-    <title>Academia | Home</title>
+    <title>POWER GYM | Home</title>
 </head>
 
 <body>
@@ -26,7 +26,7 @@
             <span class="logo"></span>
             <ul>
                 <li><a href="./index.php">Home</a></li>
-                <li><a href="#">Espaço do Cliente</a></li>
+                <li><a href="./cliente.php">Espaço do Cliente</a></li>
                 <li><a href="./form.php">Junte-se a nós</a></li>
                 <li><a href="#">Agendamento</a></li>
                 <li><a href="./planos.html">Planos</a></li>
