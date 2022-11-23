@@ -205,16 +205,7 @@
     <?php
     include "./utils.php";
     include "./conexao.php";
-    $id = cleanInput($_GET['id']); // ID passado no parâmetro
-    /*
-    echo "<pre>";
-    print_r($_POST);
-    echo "</pre>";
-    exit;
-    */
-
-
-    // Pega as variáveis do POST
+    $id = cleanInput($_GET['id']); 
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $telefone = cleanInput($_POST['tel_fixo']);
@@ -231,8 +222,6 @@
     $cidade = $_POST['cidade'];
     $estado = $_POST['estado'];
 
-
-    // Se tiver POST, faz isso:
     if (isset($_POST)) {
         try {
             $query = "UPDATE Usuario SET nome= :nome, ddd_tel_fixo= :tel, ddd_tel_cel= :cel, email= :email, data_cadastro= :data_cad, logradouro= :logra, nome_logradouro= :rua, numero= :num, CEP= :cep, complemento= :compl, bairro= :bairro, cidade= :cidade, estado= :estado, altura= :altura, peso= :peso WHERE RG= :rg";
@@ -255,8 +244,9 @@
             $stmt->bindValue(":rg", $id);
 
             $stmt->execute();
-
             if ($stmt->rowCount() !== 0) {
+                exit;
+                header('location: ../views/pages/index.php');
             } else {
                 die("erro");
                 exit;
