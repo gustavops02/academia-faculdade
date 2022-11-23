@@ -44,7 +44,15 @@ try {
 
     $stmt->execute();
 
-    echo $stmt->rowCount()." linhas afetadas";
+
+    session_start();
+    $_SESSION['rg'] = $id;
+    $_SESSION['nome'] = $nome;
+    $_SESSION['email'] = $email;
+    $_SESSION['altura'] = $altura;
+    $_SESSION['peso'] = $peso;
+    $_SESSION['endereco'] = $rua . ", " . $bairro . ", " . $cidade . "- " . $estado;
+    header("location: ../views/pages/user.php");
 } catch (PDOException $e) {
     die("Erro: " . $e->getMessage());
     exit;

@@ -15,7 +15,8 @@ if (!isset($_GET)) {
     $stmt->execute();
 
     if($stmt->rowCount() == 1) {
-        echo "Removido com sucesso"; exit;
+        session_destroy();
+        header("location: ../views/pages/index.php");
     } else {
         echo "Algo deu errado";exit;
     }
