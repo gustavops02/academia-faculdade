@@ -35,7 +35,7 @@ if (!isset($_SESSION)) {
             <span class="logo"></span>
             <ul>
                 <li><a href="./index.php">Home</a></li>
-                <li><a href="#">Espaço do Cliente</a></li>
+                <li><a href="./cliente.php">Espaço do Cliente</a></li>
                 <li><a href="./form.php">Junte-se a nós</a></li>
                 <li><a href="#">Agendamento</a></li>
                 <li><a href="./planos.html">Planos</a></li>
