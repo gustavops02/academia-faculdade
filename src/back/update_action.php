@@ -43,8 +43,6 @@ try {
     $stmt->bindValue(":rg", $id);
 
     $stmt->execute();
-
-
     session_start();
     $_SESSION['rg'] = $id;
     $_SESSION['nome'] = $nome;
@@ -53,6 +51,7 @@ try {
     $_SESSION['peso'] = $peso;
     $_SESSION['endereco'] = $rua . ", " . $bairro . ", " . $cidade . "- " . $estado;
     header("location: ../views/pages/user.php");
+
 } catch (PDOException $e) {
     die("Erro: " . $e->getMessage());
     exit;

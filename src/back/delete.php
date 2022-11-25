@@ -18,6 +18,6 @@ if (!isset($_GET)) {
         session_abort();
         header("location: ../views/pages/index.php");
     } else {
-        echo "Algo deu errado";exit;
+        echo "<h1>Algo deu errado: nenhum usuário encontrado </h1>";exit;
     }
 }

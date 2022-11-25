@@ -53,7 +53,6 @@ if (!isset($_SESSION)) {
 
         <div class="container_user">
             <div class="user_info">
-                <h1>Cadastrado!</h1> <br><br>
                 <i class="fa-solid icon_user fa-circle-user"></i>
 
                 <div class="content_info">Nome : <span class="info"><?php echo $_SESSION['nome']; ?></span></div>

@@ -6,6 +6,10 @@ if (!isset($_SESSION)) {
     die("Você não está cadastrado. ");
 }
 
+if($_GET['id'] == '') {
+    die(" <h1> Erro, nenhum usuário encontrado </h1> ");
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
