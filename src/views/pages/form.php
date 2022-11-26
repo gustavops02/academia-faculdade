@@ -13,11 +13,8 @@
 
     <link rel="shortcut icon" href="../assets/logo_domain-removebg-preview.png">
     <script src="https://kit.fontawesome.com/a9f11940bf.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
-        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"
-        integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -91,8 +88,7 @@
 
                         <div class="form-control">
                             <label for="altura">Altura</label>
-                            <input type="text" id="altura" name="altura" placeholder=" Informe sua altura em metros"
-                                min="0">
+                            <input type="text" id="altura" name="altura" placeholder=" Informe sua altura em metros" min="0">
                             <i><img class="img-success" src="../assets/success-icon.svg" alt=""></i>
                             <i><img class="img-error" src="../assets/error-icon.svg" alt=""></i>
 
@@ -110,7 +106,7 @@
 
                         <div class="form-control">
                             <label for="data">Data de registro</label>
-                            <input type="date" name="data" id="data" />
+                            <input type="text" readonly name="data" id="data" />
 
                             <small>Error message</small>
                         </div>
@@ -231,8 +227,7 @@
                 <div class="contato_icons">
                     <a href=""><i class="fa-brands fa-whatsapp"></i></a>
                     <a href=""><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://github.com/gustavops02/college-gym" target="_blank"><i
-                            class="fa-brands fa-github"></i></a>
+                    <a href="https://github.com/gustavops02/college-gym" target="_blank"><i class="fa-brands fa-github"></i></a>
 
                 </div>
             </div>
@@ -243,6 +238,17 @@
     <br>
 
     <script src="../scripts/form.js"></script>
+    <script>
+        let date = new Date();
+
+        const currentYear = date.getFullYear();
+
+        const today = date.getDate();
+        const currentMonth = date.getMonth() + 1;
+        let dataAtualizada = currentYear + "-" + currentMonth + "-" + today;
+        data.value = dataAtualizada;
+        data.innerHTML = dataAtualizada;
+    </script>
 
 </body>
 

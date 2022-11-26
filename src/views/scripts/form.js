@@ -2,7 +2,6 @@ const form = document.getElementById('form')
 const nam = document.getElementById('nome')
 const email = document.getElementById('email')
 const cell = document.getElementById('telefone')
-const data = document.getElementById('data')
 const fixo = document.getElementById('tel_fixo')
 const RG = document.getElementById('rg')
 const CEP = document.getElementById('cep')
@@ -50,12 +49,12 @@ function successValidation(input) {
 }
 
 function validate() {
-    if (nameValidator() && RGValidator() && emailValidator() && 
+    if (nameValidator() && RGValidator() && emailValidator() &&
         fixoValidator() && phoneValidator() && alturaValidator()
         && pesoValidator() && dateValidator() && lograValidator() && cepValidator() && ruaValidator()
         && numeroresValidator() && complementoValidator() && bairroValidator() && cidadeValidator() && estadoValidator()) {
 
-            return true;
+        return true;
     } else {
         return false;
     }
@@ -136,14 +135,7 @@ function fixoValidator() {
 }
 
 function dateValidator() {
-    let dateValue = data.value
-    if (dateValue === '') {
-        errorValidation(data, 'Preencha esse campo')
-        return false
-    } else {
-        successValidation(data)
-        return true
-    }
+    return true;
 }
 
 function bairroValidator() {
