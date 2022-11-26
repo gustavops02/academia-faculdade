@@ -110,7 +110,7 @@
 
                         <div class="form-control">
                             <label for="data">Data de registro</label>
-                            <input type="date" name="data" id="data" placeholder="Data de registro">
+                            <input type="date" name="data" id="data" />
 
                             <small>Error message</small>
                         </div>
